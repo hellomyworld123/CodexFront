@@ -1,0 +1,12 @@
+import React from "react";
+
+const Welcome: React.FC = () => {
+  return (
+    <div>
+      <h1>Bienvenue !</h1>
+      <p>Ceci est le composant Welcome.</p>
+    </div>
+  );
+};
+
+export default Welcome;
