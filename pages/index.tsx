@@ -1,4 +1,4 @@
-import type { Route } from "../sahar-frontend-vite/app/+types/home";
+import type { Route } from "../types/home";
 import { Welcome } from "../sahar-frontend-vite/app/welcome/welcome";
 
 export function meta({}: any) {
