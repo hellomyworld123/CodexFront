@@ -1,13 +1,8 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-
-export default function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
-// Exemple à placer dans pages/_app.tsx ou dans chaque page
 import Head from 'next/head';
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
