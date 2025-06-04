@@ -13,29 +13,29 @@ Frontend SaaS moderne pour Sahar Nail Care, basé sur Next.js, Tailwind CSS et d
 
 ```bash
 # 1. Cloner le repo
- git clone https://github.com/iseuuh/sahar-frontend-prod.git
- cd sahar-frontend-prod
+git clone https://github.com/iseuuh/sahar-frontend-prod.git
+cd sahar-frontend-prod
 
 # 2. Installer les dépendances
- npm install
+npm install
 
 # 3. Créer le fichier .env.local
- cp .env.local.example .env.local
+cp .env.local.example .env.local
 
 # 4. Lancer le serveur de dev
- npm run dev
-```
+npm run dev
+Déploiement cloud
+Vercel : push sur main déclenche le build et le déploiement automatique
 
-## Déploiement cloud
-- **Vercel** : push sur `main` déclenche le build et le déploiement automatique
-- Configurer la variable d'environnement `NEXT_PUBLIC_API_URL` sur Vercel
+Configurer la variable d'environnement NEXT_PUBLIC_API_URL sur Vercel
 
-## Variables d'environnement
-- `NEXT_PUBLIC_API_URL` : URL du backend (ex : https://sahar-backend-prod.onrender.com)
+Variables d'environnement
+NEXT_PUBLIC_API_URL : URL du backend (ex : https://sahar-backend-prod.onrender.com)
 
-## Structure des dossiers
-
-```
+Structure des dossiers
+csharp
+Copier
+Modifier
 frontend/
 ├── components/         # Composants React réutilisables
 ├── pages/              # Pages Next.js (index.tsx, ...)
@@ -45,16 +45,28 @@ frontend/
 ├── package.json        # Dépendances et scripts
 ├── tsconfig.json       # Config TypeScript
 └── ...
-```
+TODO / besoins métiers
+ Corriger le bug de validation téléphone (préfixe +216)
 
-## TODO / besoins métiers
-- [ ] Corriger le bug de validation téléphone (préfixe +216)
-- [ ] Ajouter l'authentification/multi-tenant
-- [ ] Intégrer le paiement en ligne
-- [ ] Monitoring et alerting (Sentry, LogRocket...)
-- [ ] RGPD et consentement cookies
-- [ ] Nettoyer les anciens dossiers hérités (frontend-vite, src, etc.)
+ Ajouter l'authentification/multi-tenant
+
+ Intégrer le paiement en ligne
+
+ Monitoring et alerting (Sentry, LogRocket...)
+
+ RGPD et consentement cookies
+
+ Nettoyer les anciens dossiers hérités (frontend-vite, src, etc.)
+
+Pour toute question ou contribution, ouvrez une issue ou contactez l'équipe Sahar Nails.
+
+yaml
+Copier
+Modifier
 
 ---
 
-Pour toute question ou contribution, ouvrez une issue ou contactez l'équipe Sahar Nails.
+### **Explications**
+- Tout ce qui concernait **Create React App** (scripts, sections, docs) est supprimé car inutile dans Next.js.
+- On **garde la partie “structure du projet”** ultra claire, et la TODO métier.
+- Les instructions sont **orientées Next.js, Tailwind, Vercel** (stack actuelle).
