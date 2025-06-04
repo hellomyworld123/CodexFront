@@ -1,12 +1,16 @@
-import React from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export default function ProtectedRoute({ children }) {
-  const token = localStorage.getItem('token');
-  
-  if (!token) {
-    return <Navigate to="/admin" replace />;
-  }
+  const router = useRouter();
+  const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
 
+  useEffect(() => {
+    if (!token) {
+      router.replace('/admin');
+    }
+  }, [token, router]);
+
+  if (!token) return null; // ou un loader
   return children;
-} 
+}

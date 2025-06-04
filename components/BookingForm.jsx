@@ -1,9 +1,9 @@
 // src/components/BookingForm.jsx
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { SiTiktok } from "react-icons/si";
 import { FaInstagram, FaFacebook } from "react-icons/fa";
-import api from "../lib/api";
+import { api } from "../lib/api";
 
 const services = [
   "Vernis permanent",
@@ -140,7 +140,7 @@ export default function BookingForm() {
           Merci pour votre réservation. Nous vous contacterons bientôt pour confirmer votre rendez-vous.
         </p>
         <Link 
-          to="/" 
+          href="/" 
           className="mt-4 inline-block w-full bg-gold text-noir py-2 px-4 rounded hover:bg-rose transition-colors text-center"
         >
           Retour à l'accueil

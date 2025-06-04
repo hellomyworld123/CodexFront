@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import BookingForm from "../components/BookingForm";
@@ -34,7 +34,7 @@ export default function Home() {
             L'art de sublimer vos mains.
           </p>
           <Link
-            to="/booking"
+            href="/booking"
             className="mt-8 inline-block bg-gold text-noir py-2 md:py-3 px-6 md:px-8 rounded-full text-base md:text-lg font-semibold shadow-lg hover:bg-rose transition duration-300"
           >
             Réservez maintenant

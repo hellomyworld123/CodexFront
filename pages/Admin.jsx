@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import api from "../lib/api";
+import { useRouter } from "next/router";
+import { api } from "../lib/api";
 
 const Admin = () => {
   const [email, setEmail] = useState("admin@sahar.com");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -14,7 +14,7 @@ const Admin = () => {
     try {
       const result = await api.login({ email, password });
       localStorage.setItem("token", result.token);
-      navigate("/dashboard", { replace: true });
+      router.replace("/dashboard");
     } catch (err) {
       alert("Erreur de login : " + err.message);
     } finally {
@@ -66,4 +66,4 @@ const Admin = () => {
   );
 };
 
-export default Admin; 
+export default Admin;

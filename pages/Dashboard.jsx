@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import api from "../lib/api";
+import { api } from "../lib/api";
 
 const Dashboard = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [reservations, setReservations] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -14,7 +14,7 @@ const Dashboard = () => {
   const fetchReservations = useCallback(async () => {
     try {
       const token = localStorage.getItem("token");
-      if (!token) return navigate("/admin", { replace: true });
+      if (!token) return router.replace("/admin");
       const res = await api.getReservations(token);
       setReservations(res.data);
     } catch (err) {
@@ -22,7 +22,7 @@ const Dashboard = () => {
     } finally {
       setLoading(false);
     }
-  }, [navigate]);
+  }, [router]);
 
   useEffect(() => {
     fetchReservations();
@@ -88,11 +88,12 @@ const Dashboard = () => {
         events={events}
         eventClick={handleEventClick}
       />
-      <button onClick={() => navigate("/admin", { replace: true })} className="mt-4 bg-black text-white py-2 px-4 rounded">
+      <button onClick={() => router.replace("/admin")}
+        className="mt-4 bg-black text-white py-2 px-4 rounded">
         Se déconnecter
       </button>
     </div>
   );
 };
 
-export default Dashboard; 
+export default Dashboard;
