@@ -1,7 +1,7 @@
-import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import type { Route } from "../sahar-frontend-vite/app/+types/home";
+import { Welcome } from "../sahar-frontend-vite/app/welcome/welcome";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({}: any) {
   return [
     { title: "New React Router App" },
     { name: "description", content: "Welcome to React Router!" },
