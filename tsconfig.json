@@ -10,13 +10,14 @@
     "types": ["node", "vite/client"],
     "target": "ES2022",
     "module": "ES2022",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "jsx": "react-jsx",
     "rootDirs": [".", "./.react-router/types"],
     "baseUrl": ".",
     "paths": {
       "~/*": ["./app/*"]
     },
+    "typeRoots": ["./types", "./node_modules/@types"],
     "esModuleInterop": true,
     "verbatimModuleSyntax": true,
     "noEmit": true,
